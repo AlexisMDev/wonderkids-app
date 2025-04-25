@@ -26,5 +26,13 @@ services:
       - ./backend:/app
       - /app/node_modules #évite les conflits entre host et conteneur
 
+  frontend:
+    build: ./frontend
+    container_name: wonder-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+
+
 volumes:
   postgres-data:
