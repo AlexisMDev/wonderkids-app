@@ -1,20 +1,17 @@
-# Étape de build
-FROM node:22-slim AS builder
+# Étape 1 : Image de base officielle Node
+FROM node:22-slim
 
+# Étape 2 : Créer un dossier de travail
 WORKDIR /app
+
+# Étape 3 : Copier les fichiers de projet
 COPY . .
 
+# Étape 4 : Installer les dépendances
 RUN npm install
-RUN npm run build
 
-# Étape pour servir l'app
-FROM nginx:alpine
+# Étape 5 : Exposer le port sur lequel Vite tourne
+EXPOSE 5173
 
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# On écrase la config par défaut de nginx si besoin
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Étape 6 : Lancer le serveur Vite
+CMD ["npm", "run", "dev", "--", "--host"]
