@@ -1,15 +1,22 @@
 import axios from "axios";
 
-const api = axios.create({
+const API = axios.create({
 	baseURL: "http://localhost:3001/",
 });
 
-export const fetchPlayers = async (token) => {
+// Ajout du token d'auth dans chaque requête
+API.interceptors.request.use((config) => {
+	const token = localStorage.getItem("token");
+	if (token) {
+		config.headers.Authorization = `Bearer ${token}`;
+	}
+	return config;
+});
+
+export const fetchPlayers = async ({ page = 1, limit = 10, position = "" }) => {
 	try {
-		const response = await api.get("/api/players", {
-			headers: {
-				Authorization: `Bearer ${token}`,
-			},
+		const response = await API.get("/api/players", {
+			params: { page, limit, position },
 		});
 		return response.data;
 	} catch (err) {
@@ -18,4 +25,4 @@ export const fetchPlayers = async (token) => {
 	}
 };
 
-export default api;
+export default API;

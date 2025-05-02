@@ -1,12 +1,12 @@
 import express from "express";
 
 import verifyToken from "../middleware/verifyToken.js";
-import { getAllPlayers, getPlayerById, getTopPlayer, searchPlayers } from "../controllers/playersController.js";
+import { getPlayers, getPlayerById, getTopPlayer, searchPlayers } from "../controllers/playersController.js";
 
 const router = express.Router();
 
 // Route GET /api/players
-router.get("/players", verifyToken, getAllPlayers);
+router.get("/players", verifyToken, getPlayers);
 
 // Route GET /api/players/top
 router.get("/players/top", getTopPlayer);

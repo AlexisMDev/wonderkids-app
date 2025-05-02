@@ -10,11 +10,37 @@ export const getAllPlayers = async (req, res) => {
 	}
 };
 
-// Tu peux aussi ajouter d'autres handlers ici plus tard :
-// - getPlayerById
-// - createPlayer
-// - updatePlayer
-// - deletePlayer
+export const getPlayers = async (req, res) => {
+	try {
+		const page = parseInt(req.query.page) || 1;
+		const limit = parseInt(req.query.limit) || 10;
+		const skip = (page - 1) * limit;
+		const position = req.query.position;
+
+		const filters = {};
+		if (position) {
+			filters.position = position;
+		}
+
+		const [players, total] = await Promise.all([
+			prisma.player.findMany({
+				where: filters,
+				skip,
+				take: limit,
+				orderBy: { name: "asc" },
+			}),
+			prisma.player.count({ where: filters }),
+		]);
+
+		res.json({
+			players,
+			currentPage: page,
+			totalPages: Math.ceil(total / limit),
+		});
+	} catch (err) {
+		res.status(500).json({ error: "Erreur lors de la récupération des joueurs." });
+	}
+};
 
 export const getPlayerById = async (req, res) => {
 	const { id } = req.params;
