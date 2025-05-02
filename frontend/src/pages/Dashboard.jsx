@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { fetchPlayers } from "../services/api";
 import Spinner from "../components/Spinner";
+import ErrorAlert from "../components/ErrorAlert";
 
 const Dashboard = () => {
 	const { token } = useAuth();
@@ -31,7 +32,7 @@ const Dashboard = () => {
 		<div className="p-4">
 			<h1 className="text-2xl font-bold mb-4">Wonderkids</h1>
 			{loading && <Spinner message="Chargement des joueurs..." />}
-			{error && <p className="text-red-500 font-semibold">{error}</p>}
+			{error && <ErrorAlert message={error} />}
 
 			{!loading && !error && (
 				<ul className="space-y-2">
