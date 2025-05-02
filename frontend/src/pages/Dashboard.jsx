@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { fetchPlayers } from "../services/api";
+import Spinner from "../components/Spinner";
 
 const Dashboard = () => {
 	const { token } = useAuth();
@@ -29,7 +30,7 @@ const Dashboard = () => {
 	return (
 		<div className="p-4">
 			<h1 className="text-2xl font-bold mb-4">Wonderkids</h1>
-			{loading && <p className="text-gray-500 italic animate-pulse">Chargement en cours...</p>}
+			{loading && <Spinner message="Chargement des joueurs..." />}
 			{error && <p className="text-red-500 font-semibold">{error}</p>}
 
 			{!loading && !error && (
