@@ -20,7 +20,6 @@ model Player {
   nationality String
   club        String
   position    String
-  overall     Int
   potential   Int
 }
 

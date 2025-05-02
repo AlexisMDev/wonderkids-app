@@ -76,7 +76,9 @@ const Dashboard = () => {
 					{players.map((player) => (
 						<div key={player.id} className="p-4 bg-white rounded-xl shadow">
 							<h2 className="font-semibold text-lg">{player.name}</h2>
-							<p className="text-sm text-gray-600">{player.position}</p>
+							<p className="text-sm text-gray-600">Club : {player.club}</p>
+							<p className="text-sm text-gray-600">Position : {player.position}</p>
+							<p className="text-sm text-gray-600">Potentiel : {player.potential}</p>
 						</div>
 					))}
 				</div>

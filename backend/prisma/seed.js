@@ -1,62 +1,27 @@
-import { PrismaClient } from "@prisma/client";
+import path from "path";
 import bcrypt from "bcrypt";
+import { fileURLToPath } from "url";
 
-const prisma = new PrismaClient();
+import fs from "fs/promises";
 
-const players = [
-	{
-		name: "Lamine Yamal",
-		age: 16,
-		nationality: "Spain",
-		club: "FC Barcelona",
-		position: "Attaquant",
-		overall: 75,
-		potential: 91,
-	},
-	{
-		name: "Arda Güler",
-		age: 18,
-		nationality: "Turkey",
-		club: "Real Madrid",
-		position: "Milieu",
-		overall: 73,
-		potential: 89,
-	},
-	{
-		name: "Warren Zaïre-Emery",
-		age: 17,
-		nationality: "France",
-		club: "Paris Saint-Germain",
-		position: "Milieu",
-		overall: 76,
-		potential: 90,
-	},
-	{
-		name: "Endrick",
-		age: 17,
-		nationality: "Brazil",
-		club: "Palmeiras / Real Madrid (futur)",
-		position: "Attaquant",
-		overall: 72,
-		potential: 88,
-	},
-	{
-		name: "Rico Lewis",
-		age: 19,
-		nationality: "England",
-		club: "Manchester City",
-		position: "Défenseur",
-		overall: 75,
-		potential: 86,
-	},
-];
+import prisma from "../utils/prisma.js";
+
+// Pour obtenir le chemin absolu en ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function main() {
-	console.log("🌱 Seeding database...");
-	// Ajout des joueurs en BDD
+	const dataPath = path.join(__dirname, "wonderkids.json");
+	const file = await fs.readFile(dataPath, "utf-8");
+	const players = JSON.parse(file);
+
 	for (const player of players) {
-		await prisma.player.create({ data: player });
+		await prisma.player.create({
+			data: player,
+		});
 	}
+
+	console.log(`✅ ${players.length} wonderkids imported.`);
 
 	// Ajout d'un utilisateur test en BDD
 	const hashedPassword = await bcrypt.hash("password123", 10);
@@ -66,8 +31,7 @@ async function main() {
 			password: hashedPassword,
 		},
 	});
-
-	console.log("✅ Done seeding.");
+	console.log(`✅ user test imported.`);
 }
 
 main()

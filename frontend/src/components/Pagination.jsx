@@ -3,7 +3,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
 	return (
 		<div className="flex justify-center items-center space-x-2 mt-6">
-			{pages.map((page) => {
+			{pages.map((page) => (
 				<button
 					key={page}
 					onClick={() => onPageChange(page)}
@@ -12,8 +12,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 					}`}
 				>
 					{page}
-				</button>;
-			})}
+				</button>
+			))}
 		</div>
 	);
 };

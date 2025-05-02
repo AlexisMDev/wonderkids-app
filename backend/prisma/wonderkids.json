@@ -1,0 +1,452 @@
+[
+	{
+		"id": 1,
+		"name": "Lamine Yamal",
+		"age": 16,
+		"nationality": "Espagne",
+		"club": "FC Barcelona",
+		"position": "Ailier droit",
+		"potential": 93
+	},
+	{
+		"id": 2,
+		"name": "Endrick",
+		"age": 17,
+		"nationality": "Brésil",
+		"club": "Palmeiras",
+		"position": "Attaquant",
+		"potential": 92
+	},
+	{
+		"id": 3,
+		"name": "Arda Güler",
+		"age": 18,
+		"nationality": "Turquie",
+		"club": "Real Madrid",
+		"position": "Milieu offensif",
+		"potential": 91
+	},
+	{
+		"id": 4,
+		"name": "Warren Zaïre-Emery",
+		"age": 18,
+		"nationality": "France",
+		"club": "Paris SG",
+		"position": "Milieu central",
+		"potential": 90
+	},
+	{
+		"id": 5,
+		"name": "Alejandro Garnacho",
+		"age": 19,
+		"nationality": "Argentine",
+		"club": "Manchester United",
+		"position": "Ailier gauche",
+		"potential": 90
+	},
+	{
+		"id": 6,
+		"name": "Kenan Yıldız",
+		"age": 18,
+		"nationality": "Turquie",
+		"club": "Juventus",
+		"position": "Milieu offensif",
+		"potential": 88
+	},
+	{
+		"id": 7,
+		"name": "Benjamin Šeško",
+		"age": 20,
+		"nationality": "Slovénie",
+		"club": "RB Leipzig",
+		"position": "Attaquant",
+		"potential": 88
+	},
+	{
+		"id": 8,
+		"name": "Elye Wahi",
+		"age": 21,
+		"nationality": "France",
+		"club": "Lens",
+		"position": "Attaquant",
+		"potential": 87
+	},
+	{
+		"id": 9,
+		"name": "Rasmus Højlund",
+		"age": 21,
+		"nationality": "Danemark",
+		"club": "Manchester United",
+		"position": "Attaquant",
+		"potential": 88
+	},
+	{
+		"id": 10,
+		"name": "Julien Duranville",
+		"age": 17,
+		"nationality": "Belgique",
+		"club": "Borussia Dortmund",
+		"position": "Ailier droit",
+		"potential": 86
+	},
+	{
+		"id": 11,
+		"name": "Arthur Vermeeren",
+		"age": 19,
+		"nationality": "Belgique",
+		"club": "Atlético Madrid",
+		"position": "Milieu défensif",
+		"potential": 87
+	},
+	{
+		"id": 12,
+		"name": "Lucas Bergvall",
+		"age": 18,
+		"nationality": "Suède",
+		"club": "Djurgårdens IF",
+		"position": "Milieu central",
+		"potential": 87
+	},
+	{
+		"id": 13,
+		"name": "Noah Mbamba",
+		"age": 19,
+		"nationality": "Belgique",
+		"club": "Bayer Leverkusen",
+		"position": "Milieu défensif",
+		"potential": 86
+	},
+	{
+		"id": 14,
+		"name": "Mathys Tel",
+		"age": 18,
+		"nationality": "France",
+		"club": "Bayern Munich",
+		"position": "Attaquant",
+		"potential": 89
+	},
+	{
+		"id": 15,
+		"name": "João Neves",
+		"age": 19,
+		"nationality": "Portugal",
+		"club": "Benfica",
+		"position": "Milieu défensif",
+		"potential": 89
+	},
+	{
+		"id": 16,
+		"name": "Angelo Gabriel",
+		"age": 19,
+		"nationality": "Brésil",
+		"club": "Chelsea",
+		"position": "Ailier droit",
+		"potential": 85
+	},
+	{
+		"id": 17,
+		"name": "Lewis Hall",
+		"age": 19,
+		"nationality": "Angleterre",
+		"club": "Newcastle",
+		"position": "Latéral gauche",
+		"potential": 84
+	},
+	{
+		"id": 18,
+		"name": "Zeno Debast",
+		"age": 20,
+		"nationality": "Belgique",
+		"club": "Anderlecht",
+		"position": "Défenseur central",
+		"potential": 86
+	},
+	{
+		"id": 19,
+		"name": "Lucas Gourna-Douath",
+		"age": 20,
+		"nationality": "France",
+		"club": "RB Salzburg",
+		"position": "Milieu défensif",
+		"potential": 85
+	},
+	{
+		"id": 20,
+		"name": "Vitor Roque",
+		"age": 19,
+		"nationality": "Brésil",
+		"club": "FC Barcelona",
+		"position": "Attaquant",
+		"potential": 88
+	},
+	{
+		"id": 21,
+		"name": "Janis Antropov",
+		"age": 18,
+		"position": "CB",
+		"club": "RB Salzburg",
+		"nationality": "Latvia",
+		"potential": 86
+	},
+	{
+		"id": 22,
+		"name": "Matías Esquivel",
+		"age": 19,
+		"position": "CM",
+		"club": "Vélez Sarsfield",
+		"nationality": "Argentina",
+		"potential": 85
+	},
+	{
+		"id": 23,
+		"name": "Lamine Diarra",
+		"age": 17,
+		"position": "ST",
+		"club": "Strasbourg",
+		"nationality": "Senegal",
+		"potential": 84
+	},
+	{
+		"id": 24,
+		"name": "Alessandro Riva",
+		"age": 18,
+		"position": "RB",
+		"club": "Atalanta",
+		"nationality": "Italy",
+		"potential": 87
+	},
+	{
+		"id": 25,
+		"name": "Miguel Ángel López",
+		"age": 17,
+		"position": "LW",
+		"club": "Sevilla B",
+		"nationality": "Spain",
+		"potential": 85
+	},
+	{
+		"id": 26,
+		"name": "Kaito Tanaka",
+		"age": 19,
+		"position": "CAM",
+		"club": "Kawasaki Frontale",
+		"nationality": "Japan",
+		"potential": 83
+	},
+	{
+		"id": 27,
+		"name": "Niko Volkov",
+		"age": 18,
+		"position": "GK",
+		"club": "CSKA Moscow",
+		"nationality": "Russia",
+		"potential": 86
+	},
+	{
+		"id": 28,
+		"name": "Thabo Khumalo",
+		"age": 17,
+		"position": "CDM",
+		"club": "Kaizer Chiefs",
+		"nationality": "South Africa",
+		"potential": 84
+	},
+	{
+		"id": 29,
+		"name": "Malick Traoré",
+		"age": 18,
+		"position": "RW",
+		"club": "FC Lorient",
+		"nationality": "Mali",
+		"potential": 86
+	},
+	{
+		"id": 30,
+		"name": "Rafael Almeida",
+		"age": 19,
+		"position": "LB",
+		"club": "Cruzeiro",
+		"nationality": "Brazil",
+		"potential": 85
+	},
+	{
+		"id": 31,
+		"name": "Lucas Kramer",
+		"age": 18,
+		"position": "CB",
+		"club": "Hamburger SV",
+		"nationality": "Germany",
+		"potential": 87
+	},
+	{
+		"id": 32,
+		"name": "Joaquín Soto",
+		"age": 17,
+		"position": "ST",
+		"club": "Universidad Católica",
+		"nationality": "Chile",
+		"potential": 84
+	},
+	{
+		"id": 33,
+		"name": "Ethan Clarke",
+		"age": 19,
+		"position": "RM",
+		"club": "Bristol City",
+		"nationality": "England",
+		"potential": 82
+	},
+	{
+		"id": 34,
+		"name": "Ali Rezazadeh",
+		"age": 18,
+		"position": "CAM",
+		"club": "Persepolis",
+		"nationality": "Iran",
+		"potential": 84
+	},
+	{
+		"id": 35,
+		"name": "Yusuf Demirci",
+		"age": 18,
+		"position": "CM",
+		"club": "Trabzonspor",
+		"nationality": "Turkey",
+		"potential": 85
+	},
+	{
+		"id": 36,
+		"name": "Nathaniel Dube",
+		"age": 17,
+		"position": "ST",
+		"club": "Orlando Pirates",
+		"nationality": "Zimbabwe",
+		"potential": 83
+	},
+	{
+		"id": 37,
+		"name": "Henrik Johansson",
+		"age": 18,
+		"position": "CB",
+		"club": "IFK Göteborg",
+		"nationality": "Sweden",
+		"potential": 84
+	},
+	{
+		"id": 38,
+		"name": "Marko Vukovic",
+		"age": 19,
+		"position": "CDM",
+		"club": "Partizan Belgrade",
+		"nationality": "Serbia",
+		"potential": 85
+	},
+	{
+		"id": 39,
+		"name": "Mohamed Abdi",
+		"age": 18,
+		"position": "RB",
+		"club": "Djurgårdens IF",
+		"nationality": "Norway",
+		"potential": 83
+	},
+	{
+		"id": 40,
+		"name": "Erick Mendoza",
+		"age": 18,
+		"position": "LW",
+		"club": "Club América",
+		"nationality": "Mexico",
+		"potential": 86
+	},
+	{
+		"id": 41,
+		"name": "Felipe Santana",
+		"age": 17,
+		"position": "CB",
+		"club": "Flamengo",
+		"nationality": "Brazil",
+		"potential": 85
+	},
+	{
+		"id": 42,
+		"name": "Noah Bamba",
+		"age": 18,
+		"position": "LW",
+		"club": "Standard Liège",
+		"nationality": "Belgium",
+		"potential": 84
+	},
+	{
+		"id": 43,
+		"name": "Alexei Morozov",
+		"age": 19,
+		"position": "GK",
+		"club": "Dinamo Moscow",
+		"nationality": "Russia",
+		"potential": 83
+	},
+	{
+		"id": 44,
+		"name": "Tobias Möller",
+		"age": 18,
+		"position": "RB",
+		"club": "FC Augsburg",
+		"nationality": "Germany",
+		"potential": 84
+	},
+	{
+		"id": 45,
+		"name": "Abdulrahman Al-Hamadi",
+		"age": 18,
+		"position": "CM",
+		"club": "Al Ain",
+		"nationality": "UAE",
+		"potential": 82
+	},
+	{
+		"id": 46,
+		"name": "Jean-Paul Kouassi",
+		"age": 17,
+		"position": "ST",
+		"club": "ASEC Mimosas",
+		"nationality": "Ivory Coast",
+		"potential": 86
+	},
+	{
+		"id": 47,
+		"name": "Cristian Gómez",
+		"age": 19,
+		"position": "CAM",
+		"club": "Independiente",
+		"nationality": "Argentina",
+		"potential": 85
+	},
+	{
+		"id": 48,
+		"name": "Milan Stojanovic",
+		"age": 18,
+		"position": "CB",
+		"club": "Red Star Belgrade",
+		"nationality": "Serbia",
+		"potential": 84
+	},
+	{
+		"id": 49,
+		"name": "Rami Khoury",
+		"age": 18,
+		"position": "CDM",
+		"club": "Al Hilal",
+		"nationality": "Saudi Arabia",
+		"potential": 83
+	},
+	{
+		"id": 50,
+		"name": "Oscar Lindberg",
+		"age": 17,
+		"position": "RM",
+		"club": "AIK",
+		"nationality": "Sweden",
+		"potential": 85
+	}
+]
