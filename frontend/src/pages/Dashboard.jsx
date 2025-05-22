@@ -30,7 +30,7 @@ const Dashboard = () => {
 		name: "",
 		positions: [],
 		nationalities: [],
-		potential: 50,
+		potential: 0,
 	});
 
 	const loadPlayers = async () => {
@@ -58,11 +58,16 @@ const Dashboard = () => {
 		setCurrentPage(newPage);
 	};
 
+	const handleFilterChange = (newFilters) => {
+		setFilters(newFilters);
+		setCurrentPage(1);
+	};
+
 	return (
 		<div className="p-4">
 			<h1 className="text-2xl font-bold mb-4">Wonderkids</h1>
 
-			<FilterBar filters={filters} setFilters={setFilters} />
+			<FilterBar filters={filters} onFilterChange={handleFilterChange} />
 
 			{error && <ErrorAlert message={error} />}
 			{loading && <Spinner message="Chargement des joueurs..." />}

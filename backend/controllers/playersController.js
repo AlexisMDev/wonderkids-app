@@ -12,39 +12,52 @@ export const getAllPlayers = async (req, res) => {
 
 export const getPlayers = async (req, res) => {
 	try {
-		const { page = 1, limit = 10, name, positions, nationalities, potential } = req.query;
+		const {
+			page = 1,
+			limit = 10,
+			name = "",
+			positions = [],
+			nationalities = [],
+			potentialMin = 0,
+			potentialMax = 100,
+		} = req.query;
 
-		const take = parseInt(limit);
-		const skip = (page - 1) * take;
+		const pageNumber = parseInt(page);
+		const pageSize = parseInt(limit);
+		const skip = (pageNumber - 1) * pageSize;
 
-		const filters = {};
-		if (name) {
-			filters.name = { contains: name, mode: "insensitive" };
-		}
-
-		if (positions) {
-			const posArray = Array.isArray(positions) ? positions : [positions];
-			filters.position = { in: posArray };
-		}
-
-		if (nationalities) {
-			const natArray = Array.isArray(nationalities) ? nationalities : [nationalities];
-			filters.nationality = { in: natArray };
-		}
+		// Construction dynamique des filtres
+		const where = {
+			AND: [
+				name ? { name: { contains: name, mode: "insensitive" } } : {},
+				positions.length ? { position: { in: Array.isArray(positions) ? positions : [positions] } } : {},
+				nationalities.length
+					? { nationality: { in: Array.isArray(nationalities) ? nationalities : [nationalities] } }
+					: {},
+				{
+					potential: {
+						gte: Number(potentialMin),
+						lte: Number(potentialMax),
+					},
+				},
+			],
+		};
 
 		const [players, total] = await Promise.all([
 			prisma.player.findMany({
-				where: filters,
+				where,
 				skip,
-				take,
+				take: pageSize,
 				orderBy: { potential: "desc" },
 			}),
-			prisma.player.count({ where: filters }),
+			prisma.player.count({ where }),
 		]);
 
 		res.json({
 			players,
 			total,
+			page: pageNumber,
+			totalPages: Math.ceil(total / pageSize),
 		});
 	} catch (err) {
 		res.status(500).json({ error: "Erreur lors de la récupération des joueurs." });

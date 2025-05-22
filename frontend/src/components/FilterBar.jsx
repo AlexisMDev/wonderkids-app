@@ -3,19 +3,21 @@ import { useEffect, useState } from "react";
 const positions = ["Gardien", "Défenseur", "Milieu", "Attaquant"];
 const nationalities = ["France", "Brésil", "Angleterre", "Espagne", "Allemagne"];
 
-const FilterBar = ({ filters, setFilters }) => {
+const FilterBar = ({ filters, onFilterChange }) => {
 	const [localFilters, setLocalFilters] = useState(filters);
 
 	useEffect(() => {
-		setFilters(localFilters);
+		onFilterChange(localFilters);
 	}, [localFilters]);
 
 	const handleCheckboxChange = (type, value) => {
-		setLocalFilters((prev) => {
-			const currentValue = prev[type];
-			const updated = currentValue.includes(value) ? currentValue.filter((v) => v !== value) : [...currentValue, value];
-			return { ...prev, [type]: updated };
-		});
+		const currentValue = localFilters[type];
+		const updated = currentValue.includes(value) ? currentValue.filter((v) => v !== value) : [...currentValue, value];
+		setLocalFilters((prev) => ({ ...prev, [type]: updated }));
+	};
+
+	const handleInputChange = (e) => {
+		setLocalFilters((prev) => ({ ...prev, name: e.target.value }));
 	};
 
 	return (
@@ -26,7 +28,7 @@ const FilterBar = ({ filters, setFilters }) => {
 				placeholder="Rechercher un joueur"
 				className="p-2 border rounded"
 				value={localFilters.name}
-				onChange={(e) => setLocalFilters({ ...localFilters, name: e.target.value })}
+				onChange={handleInputChange}
 			/>
 
 			<div>
