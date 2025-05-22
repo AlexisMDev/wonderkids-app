@@ -12,30 +12,39 @@ export const getAllPlayers = async (req, res) => {
 
 export const getPlayers = async (req, res) => {
 	try {
-		const page = parseInt(req.query.page) || 1;
-		const limit = parseInt(req.query.limit) || 10;
-		const skip = (page - 1) * limit;
-		const position = req.query.position;
+		const { page = 1, limit = 10, name, positions, nationalities, potential } = req.query;
+
+		const take = parseInt(limit);
+		const skip = (page - 1) * take;
 
 		const filters = {};
-		if (position) {
-			filters.position = position;
+		if (name) {
+			filters.name = { contains: name, mode: "insensitive" };
+		}
+
+		if (positions) {
+			const posArray = Array.isArray(positions) ? positions : [positions];
+			filters.position = { in: posArray };
+		}
+
+		if (nationalities) {
+			const natArray = Array.isArray(nationalities) ? nationalities : [nationalities];
+			filters.nationality = { in: natArray };
 		}
 
 		const [players, total] = await Promise.all([
 			prisma.player.findMany({
 				where: filters,
 				skip,
-				take: limit,
-				orderBy: { name: "asc" },
+				take,
+				orderBy: { potential: "desc" },
 			}),
 			prisma.player.count({ where: filters }),
 		]);
 
 		res.json({
 			players,
-			currentPage: page,
-			totalPages: Math.ceil(total / limit),
+			total,
 		});
 	} catch (err) {
 		res.status(500).json({ error: "Erreur lors de la récupération des joueurs." });

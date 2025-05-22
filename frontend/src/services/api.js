@@ -13,10 +13,10 @@ API.interceptors.request.use((config) => {
 	return config;
 });
 
-export const fetchPlayers = async ({ page = 1, limit = 10, position = "" }) => {
+export const fetchPlayers = async ({ page = 1, limit = 10, filters = {} }) => {
 	try {
 		const response = await API.get("/api/players", {
-			params: { page, limit, position },
+			params: { page, limit, filters },
 		});
 		return response.data;
 	} catch (err) {
